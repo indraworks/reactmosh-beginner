@@ -1,9 +1,15 @@
 
-import Message from './Message'
+import ListGroup from "./components/ListGroup"
 
 const App = () => {
   
-     return  (<div><Message/></div>)
+     return  (
+      <>
+       <h2>List</h2>
+      <ListGroup/>
+      </>
+     
+     )
     
   
 

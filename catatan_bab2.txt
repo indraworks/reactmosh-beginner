@@ -1,0 +1,61 @@
+1.1 install bootstrap :
+     jadi kita delete semua isi dari app.css utk app.tsx dan index.css utk main.tsx 
+     kita install bootstrap@5.2.3 nah di bagian main kita import bootstrap 
+     nah kita taruh import pada bagian index atau main.tsx 
+     import 'bootstrap/dist/css/bootstrap.css' 
+
+1.2 ingat dalam sbuah jsx( html marking dalam javasicrpt ) maka gak boleh 2 tag 
+    atau lebih dalam return( <tag1></tag1> <tag2></tag2> ..tagn
+    )    
+    maka semua harus dibungkus dgn 1 buah tag penutup yaitu fragment kita bisa menuliskanya 
+    dgn <> atau dikenal dgn fragment 
+
+1.3 kalau kita merender Jsx yaitu hmtl dalam javascript For tidak ada dlam jsx utk iut 
+    kita mmbuat map nah element2nya jsx trbut yg dinamix misalkan tag list dlm bootstrap
+    nah terdiri dari ul sbgai headernya dan li adalah itemm elemetnya dan nlai didalamnya 
+    akan kita buat dinamic nah utk dnamic kita buat variable array yg nnti akan kita render 
+    contoh  let items =["sepatu","pakaian","mobil","creditcard","tas"]
+    nah yg dimaping  dgn cara penggunaan fnctional aray yaitu map dimana mengubah element array menjadi
+    output yg lain nah ingat didalam tag jsx kita gak bisa render sbuah script javascript maka harus kita 
+    buat kruung kurawal dulu itu script javascript kita  
+    contoh  dibawga ini kan ada ul sbgai wrappernya si li  nah li inilah yg dinamik merupakan element2nya
+    dan ul adalah tag wrapernya tetap sgai tag htmlnya ,krn dalam jsx yg boleh di render tag html 
+    nah si element ini kita kasih wraping {} tanda kurung kurwal karena javascript! nah utk li dia harus unix 
+    maka utk render array maka ditagnya kita beri key sbb:
+         <ul className="ListItem">
+         
+           {items.map((item)=>{
+
+            return {
+                <li key={item}>{item}</li>
+            }
+
+           })}
+           kita taruh item sbgai key karena masing 2 element array uniq gak ada yg sama namanya 
+
+         </ul> 
+    dan ingat sbuah looping utk render harus ada key jika kita mau render sbuah list array dan sejenisnya 
+    karena masing2 element harus unix ktika dirender maka harus ada key penunjuk        
+     
+     hasil:
+
+function ListGroup (){
+    const items = ["sepatu","tas","kemeja",'kaos',"celdam","dasi"]
+    return ( 
+        <ul className="list-group">
+            {items.map((item)=>{
+                return(
+                    <li className="list-group-item" key={item}>{item}</li>
+                )
+            })}
+        
+       
+      </ul>
+    )
+  
+}
+
+export default ListGroup
+nah speti itu 
+
+1.4 gimana jika ada 
