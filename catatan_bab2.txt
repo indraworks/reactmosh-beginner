@@ -58,4 +58,25 @@ function ListGroup (){
 export default ListGroup
 nah speti itu 
 
-1.4 gimana jika ada 
+1.4 gimana jika ada sbuah conditional misalkan kalau items array kita adalah array kosong kita akan tampilkan 
+    <p> no item found</p> nah dalam jsx ingat hanya ada 2 yg boleh muncul 
+    1. tag html 
+    2.component react speti diatas ListGroup itu adalah component react yg kita panggil di app.tsx 
+    nah ada 2 opsi kita akan gunakan  ertinari operator javascript dan penggunaan && 
+    ertinary operator sbb:
+    kita tetap harus bungkus dgn {} smua jscrip dalam jsx ysitu didalam return( --ini ddlam sini tempat jsx--)
+    nah sbb: ]
+    1.ertinari : {statment-logic?renderjikabenar: render jika salah }
+      utk diatas maka {items.length === 0?<p>item not found</p>: null}
+      nah ada yg lebih elegant yaitu dgn opearator dan  && kita bisa uji dgn console
+      jadi stiap dia true maka hasilnya adalah yg sblah kanan di render (cotoh pake console)
+      contoh : true && indra
+              hasil: indra 
+              true && "meong"
+              hasil:"meong" 
+              kalau false &&"sllau salah"
+              hasil:false 
+       nah utk itu kita tinggal buat statment berikut 
+       {items.length && <p> item not found </p>} 
+       nah maka back ke script kita menjadi:
+             
