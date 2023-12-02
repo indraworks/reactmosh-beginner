@@ -1,0 +1,7 @@
+di vite utk main itu sama seperti index di react  yg biasa 
+nah pada bab1 ini dibahas bagaiamana react bekerja  dia react adalah 
+sbnarnya sbuah lbrary saja dan kita bebas asukan apa2 utk mmbuat aplikasi kit aberjalan dgn baik 
+nah di react ada virtual dom 
+jadi nnti smua compoenent jsx kita di render di bagian pblic indx.html dibagaian id root 
+disana nnnti smua di render disnin 
+
