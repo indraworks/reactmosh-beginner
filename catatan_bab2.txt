@@ -79,4 +79,91 @@ nah speti itu
        nah utk itu kita tinggal buat statment berikut 
        {items.length && <p> item not found </p>} 
        nah maka back ke script kita menjadi:
-             
+       function ListGroup (){
+    let items = ["sepatu","tas","kemeja",'kaos',"celdam","dasi"]
+    //kita ganti let agar bisa di update ukt percobaan iternary operator dan && 
+     items =[]
+    return ( 
+        <>
+            {items.length == 0 && <p>Item not Found !!</p>}
+        <ul className="list-group">
+            {items.map((item)=>{
+                return(
+                    <li className="list-group-item" key={item}>{item}</li>
+                )
+            })}
+        
+       
+      </ul>
+        </>
+        
+    )
+  
+}
+
+1.5 Handling Event 
+
+     nah utk onclick arrow fucntionya berisi parameter event browser boleh kita taruh nama e saja 
+     nah di react event browser ini bertype class object namanya :class synteticBase Event  di console anda lihat list2  type element Object 
+     nya ,nah bisa kita gunakan console.log utk check :
+      
+       <ul className="ListGroup">
+          {items.map((item)=>{
+            return <li className"ListGroup-Item" 
+            key=Item 
+            //param evebt ini sebarabg nama tapi mengingat klik adalah event maka namanya saya sesuiakan 
+            onclick={(event)=>console.log(event)}
+            >{item}</li>
+          })}
+       </ul>
+
+      pada console isi class syntheticBaseEvent:
+     class syntheticBaseEvent{ }
+     nah jika anda clik akan banyak lis2t element property object dari class ini ,
+     salah satunya adalah sbb smua disini propwety event browser dari objecct antara lain ( yg penting2 saja)
+     SyntheticBaseEvent {_reactName: 'onClick', _targetInst: null, type: 'click', nativeEvent: PointerEvent, target: li.list-group-item, …}
+
+clientX: 86 //posis curson dimana waktu mouseclikc 
+clientY: 63 //posis curson dimana waktu mouseclikc 
+
+
+target: li.list-group-item //adalah object target yg diklik 
+
+type:"click" <---tyoe dari eventbrroser 
+jadi intinya semmang udah lengkap event browser ini ,nah ytk tangani clikc 
+tadi kita gak buat function ddalam kalang onClick={()=>{
+    //tidak buat disini karena komplesitas kita hanya merefer nama fucntion di luar diaras return()
+}}
+sehingga biasaya  kita buat function handlerSubit (isal namanya srtpi ini )
+const handlerSubmit =()=> {
+
+} 
+return (
+
+     <li onClick={handlerClick}></li>
+)
+
+nah tadi didalam jsx ketika kita  sorot sblum scritnya progaram kita ubah kita sorot param  event 
+didalam function eventBrowser onClick maka akan ada typenya yaitu :
+
+onclick={(event)=>console.log(event)} 
+nah waktu event disrot maka otomatis ada tyenya yaitu: 
+(parameter) event: React.MouseEvent<HTMLLIElement, MouseEvent>
+nah disitu paramter event bertype React.MouseEvent ,dan identitynya adalah HTMLLIElement dimana 
+dia adalah bagian dari objecct list dan event yg terjadiadalah bertype MouseEvent!
+
+nah kalau diluar jsx akan error harus dideclare itu param event yg amsuk d onclic!
+kenapa karena di berada dalam jsx maka otomatsi si react langsung kash tau type secara inferere artinya gak erlu
+ditulis type dari paramnya karna otomatis dikenali oleh react karena dia berada dlam wilyaha jsx!
+nah diluar jsx maka kita harus isi itu type param eventnya karena yaitu kita menyebutnya melakukan type anotation
+yaitu kita akan mendeclarasikan 
+jadi diatas :
+Kita import {MouseEvent} from React ;
+
+const handlerClick =(event:MouseEvent)=>{console.log(event)}
+seandainya tidak diberi type declare anotation sprti diatas maka dia param event diatas 
+akan bertype any dan kita tak tahu property dan method dari object event ini jadi utk itulah mesti diberi 
+type annotation jika kita mmbuat function diatas return() diluar kalang jsx 
+utk selanjutnya jika buat functional eventBrowser semacam onClick diatas maka harus posisinya 
+diatas kalang jsx yaitu diatas return()
+
