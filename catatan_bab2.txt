@@ -167,3 +167,21 @@ type annotation jika kita mmbuat function diatas return() diluar kalang jsx
 utk selanjutnya jika buat functional eventBrowser semacam onClick diatas maka harus posisinya 
 diatas kalang jsx yaitu diatas return()
 
+2.6 Managing State 
+    
+
+2.7 Passing Data via Props 
+
+2.8 Passing Function Via Props 
+
+2.9 State vs Props 
+
+2.10 Passing Children 
+
+2.11 Inspectiong Component with React Dev Tools 
+2.12 Exercise Building Button Component 
+2.13 Ezercise  Building Alert Component 
+2.14 SUmmary 
+
+
+
