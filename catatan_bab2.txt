@@ -168,7 +168,66 @@ utk selanjutnya jika buat functional eventBrowser semacam onClick diatas maka ha
 diatas kalang jsx yaitu diatas return()
 
 2.6 Managing State 
-    
+    Nah pada managing state listGroup ini kita akan buat trsorot atau active 
+    nah pada propertinya jika kita beri active maka dia akan trsorot coba kita kasih actve maka akan trsorot smua 
+    nah tapinya kita mau hanya ketika diclikc saja maka List-Group-Item tsb itu yg active 
+    nah diaras return() kita buat const selectedItem = 0 ; kalau selectedItem =1 dan >0 maka itu artinya 
+    index yg kita tekan mangacu pada list-Group-Item index yg saat itu kita tekan 
+    nah masih ingat sblumnya kita bias buat irtenary operator supaya ktika diclikc dia active atau tidak 
+    arti selectedItem = 0 1 2 atau 3 adalah no index yg terselect 
+     
+    let SelectedIndex = 3; //kalau dia -1 artinya tidak dipilih karna tidak ada index array yg -1
+  //sua mulai dari nol
+
+  return (
+    <>
+      {items.length == 0 && <p>Item not Found !!</p>}
+      <ul className="list-group">
+        {items.map((item, index) => {
+          return (
+            <li
+              className={
+                SelectedIndex === index
+                  ? "list-group-item active"
+                  : "list-group-item"
+              }
+              key={item}
+              // onClick={()=>console.log(item,index)}
+              //onClick={(event) => console.log(event)}
+              onClick={() => (SelectedIndex = index)} //ini yg akan sebabkan nilai selected index berubah
+            >
+              {item}
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+}
+Nah WAKTU KITA KLIK GAK BRUBAH lantas gimana ?ya karena state atau logic yg kita buat ada didalam function component 
+sehingga react tidak bisa tahu terjadi perubahan tsb utk HAL ITU jika kita mau mengetahui condition state logic 
+maka kita harus DEClARE dgn hoook react sudah ada toolnya library namanya useState  
+nah useState ini teridir dari sbuah array yg isinya [variableAwal,Fn_Pengubah_Variable_awal]
+jadi kalau ditulis sprti ini simbolnya const [var,Fn_var] 
+nah jadi utk array no 2 tsb adalah function yg ubah set variable awal ubah2 nilainya  nah perubahanya disimpah kembal di 
+var yaitu variable awal tadi! 
+ditulis spti ini mis sprti diatas const [selectItem,setSelectedItem] = useState(0)
+jangan lupa tanda kruung di useState adalah nilai awal variable selectItem yaitu 0 .
+
+ nah 1 buah functional component spti sebut saja ListGroup.tsx ini dia ini ada sbuah state yg mana 
+ utk dirinya nah misalkan kita panggil atau re-use ListGroup fnctional component ini maka 
+ dia akan INDEPENDENT SATU SAMA LAIN contoh:
+ const App =()=>{
+    <ListGroup/>
+    <ListGroup/>
+ }
+
+nah liat dibrowser smua akan independent satu sama lain gak ada yg statenya (yg active ) diklik beda2 
+monggo silahkan dcoba ! 
+
+     
+   
+
 
 2.7 Passing Data via Props 
 
