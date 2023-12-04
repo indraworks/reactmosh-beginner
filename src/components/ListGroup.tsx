@@ -1,10 +1,16 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
+
 
 function ListGroup() {
   let items = ["sepatu", "tas", "kemeja", "kaos", "celdam", "dasi"];
   //kita buat variabel utk SelectedItem
-  let SelectedIndex = 3; //kalau dia -1 artinya tidak dipilih karna tidak ada index array yg -1
+  //let SelectedIndex = 3; //kalau dia -1 artinya tidak dipilih karna tidak ada index array yg -1
   //sua mulai dari nol
+  //jika ada fucntional component pake react harus gunakan statehook gak bisa dgn variable biasa ubah state
+  //karena gak kedetec oleh react rn vairbal biasa statenya tersebuni dalam /inside component 
+  //kareba itu wajib pake state ! 
+  const [selectedIndex,setSelectedIndex] = useState(0)
+
 
   return (
     <>
@@ -14,14 +20,14 @@ function ListGroup() {
           return (
             <li
               className={
-                SelectedIndex === index
+                selectedIndex === index
                   ? "list-group-item active"
                   : "list-group-item"
               }
               key={item}
               // onClick={()=>console.log(item,index)}
               //onClick={(event) => console.log(event)}
-              onClick={() => (SelectedIndex = index)} //ini yg akan sebabkan nilai selected index berubah
+              onClick={() => (setSelectedIndex(index))} //ini yg akan sebabkan nilai selected index berubah
             >
               {item}
             </li>
@@ -30,7 +36,7 @@ function ListGroup() {
       </ul>
     </>
   );
-}
+    }
 
 export default ListGroup;
 /*catatan 2.5 Managing State 
