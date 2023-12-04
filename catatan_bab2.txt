@@ -229,7 +229,43 @@ monggo silahkan dcoba !
    
 
 
-2.7 Passing Data via Props 
+2.7 Passing Data via Props roupt 
+
+     apa sih props itu ?props adalah input yg masuk kedalam sbuah function Component sprti yg kita buat tadi
+     yaitu component/ListGroup.tsx 
+     nah utk masuk data bisa berupa banyak input kita masukan dlm bentuk object nah kita akan mnggunaan shape of objecttadi 
+     bentuk type datanya apa yg akan masuk sbgai input pada component yg dituju 
+     nah biasanta yg masuk ini dari parent kecompoonet ke child component  nah mis dari App.tsx ---> data variable 
+     parameternya du passing sbgai input pada anak/child component sbut saja :ListGroup 
+     nah caranya adalah tadi variable yg di ListGroup kita cobat raruh di APp.tsx dan kita pasing ke component ListGroup
+     jadi di anak tadi variable yg masuk harus sama dgn parameter di App.tsx  yg akan dipasing ke anak component 
+     dan jangan lupa di anak component harus buat inteface shape of object dari typedata input yg masuk 
+     contoh kita mau  buat masukan input utk items bertype string array dan heading bertype strinng 
+     maka di anak component disini ListGroup kita buat interface ,kita buat namanya Props saja
+     biasanya nama interface sesuai dgn nama file function Component mis :ListGroupProps {} 
+     kita buat jamaknya namai saja Props 
+     interface Props{
+        items:string[];
+        heading:string;
+     }
+
+
+     nah di inputan masuk  function parameter paramnya akan bertype dari interface tsb !
+     yaitu : {props:Props},props huruf kecil sblah kri adalah nama variable parameter booleh sbgarang nama 
+     tapi jamak pake react slalu pake nama huruf kecil dgn nama props! :)))
+
+     function ListGroup({props:Props}) { } 
+     nah ini kita bisa destruct dgn tulis masing2 dari element dari Interface Props yaiut element variable langusng 
+     jadi setelah didestruc menjadi:
+
+     function ListGroup({items,heading}:Props) {} ok kita erjakan sekanrag di vscode !
+
+
+
+     }
+
+
+
 
 2.8 Passing Function Via Props 
 
