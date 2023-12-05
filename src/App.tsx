@@ -1,19 +1,10 @@
-import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 const App = () => {
-  // const children ="<p>Warning! Error Come This Module!</p>"
-  // return (
-  //   <>
-  //     <Alert>{children}</Alert>
-  //   </>
-  // );
   return (
-    <Alert>
-      Hello{" "}
-      <p style={{ display: "inline-block" }}>
-        Indra <h2>Suryawan</h2>
-      </p>
-    </Alert>
+    <Button color={"primary"} onClick={() => console.log("iam clicked")}>
+      MyButton
+    </Button>
   );
 };
 

@@ -427,8 +427,25 @@ export default App;
 
 
 2.11 Inspectiong Component with React Dev Tools 
+     ya ini tools bagus dgn react dev tools kita bisa mengamati component parent 
+     dan child2 dibawahnya serta props (inoutan) yg masuk ke compoennt tsb (anak2/child component tsb)
+     nah kalau mau lihat jsxnya dgn klik tanda <> di seblah kanan nnti klitan suber scriptnya 
+     dari masing2 component 
+
+
 2.12 Exercise Building Button Component 
+     buatlah Button Component yg mana nama button merupakan prps inputan 
+     dan apabila diclick maka warna berubah 
+
 2.13 Ezercise  Building Alert Component 
+    kalau diApp.tsx kita mau property color punya optional jadi sudah ada nilai awalnya 
+     maka di passing parameter di anak component dalam hal ini adalah Button.tsx 
+     kita bisa set function Button({color="secondary",children,onClick}:Props)=>{}
+     nah jadi di App.tsx tak perlu buat tulis declare param color sbgai masukan (pada parentya ,kosongin aja)
+     nah tapi d interface anak component,kita buat color property jadi optional dgn taruh randa "?"
+     sbb:
+      interface Props {color?:string}
+
 2.14 SUmmary 
 
 
