@@ -340,6 +340,32 @@ monggo silahkan dcoba !
 
 2.9 State vs Props 
 
+    Beda State dan Props apa?
+
+    -Props :
+     -input masuk kedalam function component bisa variable atau function itu sndiri 
+       (datang dari parent keanak)
+       -sama siiiar sperti function args 
+       -immutable gak bisa diubah kit agak boleh langsung ubah 
+         misalkan props heading = "bla bla 
+         didalam anak component 
+      - perubahan hanya dilakukan di parent dan perubahan ini cause a re-render tampian!
+       note:imutable adalah tak dapat dichange dianak compoennt secara langsung 
+
+
+     -State :
+       -merupakan management data yg dlakukan oleh anak component ' 
+         dan bakunya harus declare melalui hook useState agar diketahui oleh react 
+       -ini similiar speti lolca variable 
+       -bersifat mutable yaitu dapat berubah 
+       - cause re-render ulang /perubahan tampilan akibat state berubah!     
+   
+
+
+
+
+
+
 2.10 Passing Children 
 
 2.11 Inspectiong Component with React Dev Tools 
