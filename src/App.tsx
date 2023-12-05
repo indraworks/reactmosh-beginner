@@ -1,19 +1,19 @@
-import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 
 const App = () => {
-  let items = ["sepatu", "tas", "kemeja", "kaos", "celdam", "dasi"];
-  let heading = "Accesories";
-  const handleSelectedItem = (item: string) => {
-    console.log(item);
-  };
+  // const children ="<p>Warning! Error Come This Module!</p>"
+  // return (
+  //   <>
+  //     <Alert>{children}</Alert>
+  //   </>
+  // );
   return (
-    <>
-      <ListGroup
-        items={items}
-        heading={heading}
-        onSelectedItem={handleSelectedItem}
-      />
-    </>
+    <Alert>
+      Hello{" "}
+      <p style={{ display: "inline-block" }}>
+        Indra <h2>Suryawan</h2>
+      </p>
+    </Alert>
   );
 };
 

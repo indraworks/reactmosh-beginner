@@ -358,7 +358,8 @@ monggo silahkan dcoba !
          dan bakunya harus declare melalui hook useState agar diketahui oleh react 
        -ini similiar speti lolca variable 
        -bersifat mutable yaitu dapat berubah 
-       - cause re-render ulang /perubahan tampilan akibat state berubah!     
+       - cause re-render ulang /perubahan tampilan akibat state berubah!   
+
    
 
 
@@ -367,6 +368,63 @@ monggo silahkan dcoba !
 
 
 2.10 Passing Children 
+      nah ini dia yg perlu kita bahas agar tidak bingung maksud children itu apa 
+      nah kebanyakan yg mau dipassing adalah sbuah tag content kedalam function component anak sbut saja Alert.tsx
+      lha saya mau pasing content sprti ini  <p>Hello Indra</p> atau yg lebih complex lagi 
+      maka di Parent kita harus import namanya ReactNode karena yg akan dipassing adalah "children" maka 
+      type children ini adalah ReactNode 
+      nah utk hal tsb pada parent tag functioal component yg kanan tutup harus kita buka biar gak uggly kata mosh !
+      jadi harus ada tag buka dan tag tutub dan paramter content ada ditengahnya nah jadinya speti ini 
+      
+      contoh pada parent App.tsx 
+      const children = "<p>Wrong type please repeat!</p>
+
+      <ListGroup>{children}</ListGroup>
+
+      nah pada functional component anak yaitu Alert.tsx 
+
+      import ReactNode from 'react';
+      interface Props {
+        children:ReactNode
+      }
+
+      const Alert =({children}:Props)=> {
+         return ( 
+             <div alert alert-primary>{children}</div>
+
+         )
+        <div></div>
+      }
+         
+
+       cara penulsan 2nya yg di anak sama nah yg di App.tsx beda sprti ini :
+       yaitu langsung diatara 2 tag nnti si anak udah paham karena berada di 
+       tag sianak yaitu <Alert></Alert> jadi langusung tulis content html disana sudah 
+       dianggap sbgai children yg bertype ReactNode!
+
+       import Alert from "./components/Alert";
+
+const App = () => {
+
+  
+  return (
+    <>
+       //isalkan kita tulis begini :
+      <Alert> Hello <p>Indra apa kabar??</p> </Alert>
+    </>
+  );
+
+  //asal diapit oleh anak tag <Alert></Alert> maka content yg masuk pasing langsung 
+  l//functinal component anak dalam hal ini Alert otomatis dipass truught! tanpa kasih sama denga = 
+  //makanya krn kita declare sbgai childern dgn type ReactNode sprti inilah gaya penuisanya!
+};
+
+export default App;
+
+
+
+
+
 
 2.11 Inspectiong Component with React Dev Tools 
 2.12 Exercise Building Button Component 
