@@ -264,10 +264,79 @@ monggo silahkan dcoba !
 
      }
 
+     INGAT SELALU ! INGAT SELLAU jika kita udah buat shape of object dari interface pada suatu Functuon component
+     MAKA harus ada parent intinya yg akan melewatkan props/variable parameter dari parent ke si Function component ini 
+     yg uda kita declate shape of  function componentnya!
+     contoh diatas ini si child function component kita dleclare shape of object interfacenya 
+      file ListGroup.tsx 
+      //declare shape of bejct interface 
+      interface {
+        items:string[];
+        heading:string;
+      }
+     const fucntion ListGroup(){
+
+     }
+
+     Nah maka di App.ts (parent dari si functon compoent dlm hal in parentnya si ListGroup function)
+     maka sebelah kiri propertinya yg element interface diatas merupakan nama VARIABLE PARAM yg akan masuk 
+     input ke si functon compoent anak (ListGroup) 
+     nah jadi nulisnya  
+     App.tsx 
+     const App =()=> {
+        <ListGroup items={var1} heading={var2} />
+        jadi var1 dan var2 adalah variable yg dideclare di App.ts dan ada nlainya 
+        nah items dan jeading adalah nama params yg sama yg mana akan masuk ke si anak functoon (ListGroup) 
+        dimana param yg masuk ini harus dbuatan shape of object interfacenya atau harus dideclare type dataya 
+        secara anotation  sprti ini : items:string[] (contohnya anotation sprti ini !)
+     } 
+
 
 
 
 2.8 Passing Function Via Props 
+   jadi gini jika suatu fucntion Componet dalam hal ini ada event dimana event2 function dibuat di anak 
+   compoent maka ini sama saja Fucnton Compoennt tsb TIDAK RE=USEABLE! maka dari itu harus ada consumer dalam hal ini 
+   parent yg passing props/input ke si anak Function Component,
+   NAH OLEH KARENANYA KITA AKAN BUAT FUNCTION HANDLER ADA PADA PARENT component sebut saja di App.tsx 
+   nah utk itu kan buttuh variable passing parameter agar si function handler tadi masuk sbgai input di anak componentsebut saja ListGroup.tsx 
+   nah pakemnya utk itu maka di ListGroup buat proptety nama_param variable dimana property param variable ini 
+   BERTYPE SI FUNCTION DARI PARENT YG AKAN DIPASSING JADI DITULIS HEADERNYA si Funtion yg ditulis diparent ini  
+
+    misalkan nih diparent buat function contoh di App.tsx
+    const handleSelectItem =(item:string)=> {
+      console.log(item)
+    }
+     nah di bagin return () kita buat param vaiable utk masuk ingat nama harus sama dgn property yg dideclare di 
+     anak component (ListGroup.tsx) 
+     pada return (
+       <ListGroup onSelectedItem={handleSelectItem} />  //nah nama function parent dipassing 
+
+     )
+
+      nah selanjutnya kan itu si paramtadi onSelectedItem masuk sbgai props nah kita perlu declare 
+      di inteface anak component nah ingat paramnya ditulis sblah kiri harus sama dgn yg punya parent 
+      nah dan ingat utk sebelah kanan stlah titk dua : itu adalah type dari functionnya yaiut jelas headernya 
+      si nama parent function itu senditi dimana diatas adlaah :(item:string)=>void 
+      nah karena tak ada return ya ditulis void!
+       jadi penulisanya di anak component sbb:
+       interface Props {
+        onSelectedItem:(item:string)=>void
+       }
+       nah pada return() kan itu adalah event nah pada saat onClick supaya consumer tahu dia dlcik yaitu tadi 
+       kita masukan utk event pada saat onClick kita reference kita panggil lewat parametenya atau naamprops yg masuk tadi 
+       yaitu si onSelectedItem dgn dipanggil onSelectedItem otomatus function (item:string)=>{} bekerja! 
+       dan notify konsumernya !
+       berkut penulisanya:
+       onClick ={onSelectedItem(item) }  //jadi item param kita masukan di pasing inout functonya 
+       //agar nilaunya yg masuk ke functuon (item:string)=>{console.log(item) } dapat ditampilkan dinamis 
+       //nah lengkapnya sprti ini kalau sudah ada 1 baris jika tambah 2 baris di Onclick maka kita beri tanda kurung kurawal {}
+       sbb:
+        onClick={() => {setSelectedIndex(index)
+                       onSelectedItem(item)}
+              } 
+       
+       lengkapnya bisa diliat langsung d vscodenya! 
 
 2.9 State vs Props 
 
