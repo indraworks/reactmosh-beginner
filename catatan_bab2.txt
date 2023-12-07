@@ -436,15 +436,24 @@ export default App;
 2.12 Exercise Building Button Component 
      buatlah Button Component yg mana nama button merupakan prps inputan 
      dan apabila diclick maka warna berubah 
-
-2.13 Ezercise  Building Alert Component 
-    kalau diApp.tsx kita mau property color punya optional jadi sudah ada nilai awalnya 
+     kalau diApp.tsx kita mau property color punya optional jadi sudah ada nilai awalnya 
      maka di passing parameter di anak component dalam hal ini adalah Button.tsx 
      kita bisa set function Button({color="secondary",children,onClick}:Props)=>{}
      nah jadi di App.tsx tak perlu buat tulis declare param color sbgai masukan (pada parentya ,kosongin aja)
      nah tapi d interface anak component,kita buat color property jadi optional dgn taruh randa "?"
      sbb:
       interface Props {color?:string}
+
+2.13 Ezercise  Building Alert Component 
+     nah sekarang buatlah jika button ditekan muncul alert 
+     nah stlah dialert ada tombol dismis jadi ditekan dismis maka alert ilang 
+     kita akan gunakan state utk 2 2 nya nah kita akan buat functional togle yg inverse bolak balik 
+     antara true.false kita selesaikan 1 1 dulu  bisa liat langsung pada codenya .
+     nah di bootstrap 5.0 pilih component alert liat panel kanan tulisan dissmis yg mana nnti  supaya 
+     bisa hilang alert ini tambahkan alert-dismissable 
+     dan buat tombolnya juga add button X itu ada scryptnya sbb tuk smuamya :
+     
+    
 
 2.14 SUmmary 
 

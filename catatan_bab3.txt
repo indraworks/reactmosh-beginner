@@ -1,0 +1,54 @@
+bab 3 Styling Component di React 
+bab 3 ini berisi css bagaimmana kita memasukan css didalam react macam2 ada yg 
+mulai dari vanila css sampai kita pakai framework
+
+3.2 Vanila css(kita mau pkaia css kit amatikan dulu bootsrap d main.tsx)
+     udah gak recomended consuming time kalau pake plan css atau vnila-css 
+     nah kalau mau tetap pkai maka stiap concern file per component di taruh dalam 
+     1 folder directory contoh 
+                        components/ListGroup/LisGroup.tsx 
+                                              ListGroup.css 
+                         nah kita juga tambahkan 1 buah file index.ts 
+                         kita  import didalam index.ts 
+                           import ListGroup from './LisGroup 
+                           export default ListGroup
+      sehingga pada APp.tsx jka kita import file Lisgroup cukup directory  saja 
+      yg mewakili karena sudah ada index.ts 
+      pada App.tsx 
+      import ListGroup from './components/ListGroup                                                          
+
+    
+
+
+
+3.3 CSS Modules 
+
+
+
+3.4 CSS-In-JS 
+
+
+
+3.5.Seperation-Concern 
+
+3.6 Inline-Styles 
+
+3.7 Popular UI Library 
+
+
+3.8 Adding Icons 
+
+3.9 Exercise Using CSS Modules
+
+3.10 Building Like Component 
+
+
+
+
+
+
+
+
+
+
+
