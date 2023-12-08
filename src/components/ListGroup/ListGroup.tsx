@@ -1,19 +1,19 @@
 import { useState } from "react";
-import "./ListGroup.css"
+import styles from "./ListGroup.module.css";
 
 interface Props {
   items: string[];
   heading: string;
-  onSelectedItem:(item:string)=>void
+  onSelectedItem: (item: string) => void;
 }
-function ListGroup({ items, heading,onSelectedItem }: Props) {
+function ListGroup({ items, heading, onSelectedItem }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <>
       <h2>{heading}</h2>
       {items.length == 0 && <p>Item not Found !!</p>}
-      <ul className="list-group">
+      <ul className={[styles.listGroup, styles.active].join(" ")}>
         {items.map((item, index) => {
           return (
             <li
@@ -25,9 +25,10 @@ function ListGroup({ items, heading,onSelectedItem }: Props) {
               key={item}
               // onClick={()=>console.log(item,index)}
               //onClick={(event) => console.log(event)}
-              onClick={() => {setSelectedIndex(index)
-                       onSelectedItem(item)}
-              } //ini yg akan sebabkan nilai selected index berubah
+              onClick={() => {
+                setSelectedIndex(index);
+                onSelectedItem(item);
+              }} //ini yg akan sebabkan nilai selected index berubah
             >
               {item}
             </li>

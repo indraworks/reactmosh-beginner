@@ -22,8 +22,46 @@ mulai dari vanila css sampai kita pakai framework
 
 
 3.3 CSS Modules 
+     kita akan menggunakan namafileCss.module.css kenapa mesti memakai cara nama seprti ini 
+     hal ini dibutuhkan agar scope css hanya di bagian file dirinya saja contoh dibawah ini jika tidak pakai module.css 
+     contoh:/components/ListGroup/ListGroup.css
+                                  ListGroup.tsx 
+                                  index.ts 
+            nah di App.tsx kita buat juga css nama App.css 
+            isinya sama yaitu nama class yg sama yg ada di list-group maka ini akan bentrok 
+            utk supata scope gak kemana mana maka dibutuhkan dot module utk namanya biar tak bentrok 
+            contoh :App.css 
+                    isi :list-group {
+                        color:'red' 
 
-
+                    }                      
+           
+          dgn memakai module kita bisa access menjadikanya object utk itu skrg kita import sbb,
+          pada ListGroup.tsx 
+          import styles from './LisGroup.module.css'
+          pada bagian <ul className="" <---yg quatation atau petik 2 kita remove 
+          karena penulisan class list-group gak bisa maka harus pake kurung kotak 
+          jadi nulisnya begini : <ul className={styles['list-group'] }
+           tanda hypen atau "-" ini gak boleh kalau nulis class di react 
+           makanya harus ganti jadi {styles.listGroup}
+          nah kita akan ganti class .list-group fdifile css ListGroup.module.css 
+          menjadi baku utk conventional nama class wajib hurufkecilHURUFBESAR 
+          itu standarnya maka kita tulis :
+          <ul className=styles.listGroup  /> 
+          nah bagiamana misalnya itu classnya lebih dari satu banyak ada di css file misalkan 
+          pada LisGroup.module.css ada 2 atau 3 class misal:
+          isi ListGroup.module.css 
+          .listGroup {
+            style-property: none 
+            padding: 4px
+          }
+          .container {
+            bacground:'yellow'
+          }  
+           
+           nah maka pada className di ListGroup.tsx cara nulisny asbb:
+           kita buat array masukan smua nama class2 yg ada di css file dan dijoin dgn space join(" ")
+           <ul className={[styles.listGroup,styles.container].join(' ')}
 
 3.4 CSS-In-JS 
 

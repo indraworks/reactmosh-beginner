@@ -1,0 +1,18 @@
+
+.active {
+   color: "yellow";
+}
+.listGroup {
+   list-style-type: none;
+   margin-left:15px;
+   font-size:40px
+}  
+
+
+
+/*
+kalau cara oenulisan jangan list-group kalau dia dalam module.css sbb tak mau react 
+jadi nnti ganti dgn listGroup huruf pertama haruf hurufbesar utk kata ke-2
+
+
+*/

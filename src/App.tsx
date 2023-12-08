@@ -2,7 +2,7 @@
 // import Alert from "./components/Alert";
 // import { useState } from "react";
 import ListGroup from "./components/ListGroup";
-
+import "./App.css";
 const App = () => {
   // const [showAlert, setShowAlert] = useState(false);
 
@@ -11,6 +11,8 @@ const App = () => {
   // }
   let items = ["New York", "SanFransisco", "Delhi", "jakarta"];
   let heading = "Name off City";
+  //ini hanya consumer handleItem hanya kasuh abstract headernya ke onselectedItem
+  //intinya cousmer si App.tsx tahu bawah item sudah berubah
   const handleItem = (item: string) => {
     console.log(item);
   };
