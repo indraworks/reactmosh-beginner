@@ -64,6 +64,51 @@ mulai dari vanila css sampai kita pakai framework
            <ul className={[styles.listGroup,styles.container].join(' ')}
 
 3.4 CSS-In-JS 
+    nah in yg sering di pakai pennggunaan library kita sering pakai styled-components 
+    sekarang utk ts langsung bisa otomatis diinstall  
+    nah keuntungnanya dgn enggunaa css in  js atau kita lebih kenal dgn styled-componnet antara lain:
+
+    1.Scope styles -----> dia bisa trscope dgn styles mana yg mau distyle dlm 1 file
+    2.ALl the CSS& JS/TS code in one-place --->penulisan ada di file itu mis di Grid.tsx lngsung bisa 
+         didalam file tsxnya 
+    3.Easier to delete  --->krn tescope bisa langusng di buang mana2 yg dipakai mana yg tidak 
+    4.Easier to styled based on props/state 
+       -- nah ini untng benefotnya bisa js atau css dalam js kita bisa masukan sbgai props dan kmudian 
+          syle kita berubah nnti d contohkan dibawah 
+    langkah dan contoh:
+    1.langkah pertama install styled-component
+
+    2.// comment yg iport dari module css tadi sblumnya 
+    nah kita import styled from 'styled-components' pada file ListGroup.tsx 
+    nah dipaling atas dibawah declare utk import2 kita sekrang bisa buat style d dalam js 
+    dan kita tidak perlu lagi buat class karena styled ini bisa disimpan didalam variable nah 
+    variable inilah yg kita anggap sbgai nama component! 
+    kita tinggal buat property css  sebut li nah tinggal buat sperti ini cara penulisan :
+
+      styled.li``; //ada tanda backtick `` dan titik-koma ; utk ahiri penulisan class css 
+      nah stlahnya kuta bisa buat varable sbb dianggap obejct dan kita dibawha yg <li className ="bla-bla"/>
+      kita ganti sesuai nama varaible waktu kita tulis css dalam styled tadi 
+      jadi misal :
+      //utk ul  variable npenampung utk propwety ul yg kitatulis dgn cara styled ini 
+      //kita masukan ke variable nama list sesuai dgn proeprty (biasnya pakemnya)
+       const List = styled.ul`
+           list-style:none;
+           padding:4px;
+       `;
+       
+       nah utk nama List diatas dia ganti yg tadi unintended-List <ul className="bla bla"> </ul>
+       kita ganti langsung dgn nama varible dar hasil style li diatas sebut saja List jad ditulus 
+       menjadi:<List />
+       nah yg list-items tadi sama jug astlah buat styled.coponent kita buat nama class compoentnya apa?
+       contoh utk li styled.li`` 
+       nah kita masukan ke varibale const ListItems = styled.
+
+
+
+
+
+
+
 
 
 
